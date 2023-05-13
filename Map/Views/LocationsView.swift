@@ -15,7 +15,7 @@ struct LocationsView: View {
     var body: some View {
         List {
             ForEach(vm.locations) {
-                Text($0.name)
+                Text($0.cityName)
             }
         }
     }
