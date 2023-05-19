@@ -60,7 +60,7 @@ class LocationsDataService {
             coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
             description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
             imageNames: [
-                "paris-louvre-1",
+                "rome-trevifountain-1",
                 "paris-louvre-2",
                 "paris-louvre-3",
             ],

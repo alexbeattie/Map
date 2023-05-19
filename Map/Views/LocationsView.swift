@@ -15,13 +15,26 @@ struct LocationsView: View {
     var body: some View {
         
         ZStack{
-            Map(coordinateRegion: $vm.mapRegion).ignoresSafeArea()
-            
+//            Map(coordinateRegion: $vm.mapRegion).ignoresSafeArea()
+            Map(coordinateRegion: $vm.mapRegion,  annotationItems: vm.locations) { location in
+                MapMarker(coordinate: location.coordinates, tint: .cyan)}.ignoresSafeArea()
             VStack(spacing: 0) {
                 
                 header
                 .padding(10)
                 Spacer()
+                ZStack {
+                    ForEach(vm.locations) { location in
+                        if vm.mapLocation == location {
+                            LocationPreviewView(location: location)
+                                .padding()
+                                .shadow(color: Color.black.opacity(0.3), radius: 20)
+                                .transition(.asymmetric(
+                                    insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                            
+                        }
+                    }
+                }
             }
         }
     }
@@ -57,9 +70,6 @@ extension LocationsView {
             if vm.showLocationsList {
                 LocationsListView()
             }
-            
-            
-            
         }
         .background(.thickMaterial).cornerRadius(10).shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
     }
