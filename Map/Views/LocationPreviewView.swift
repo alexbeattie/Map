@@ -74,6 +74,7 @@ extension LocationPreviewView {
     private var learnMore: some View {
         Button {
 //            vm.nextButtonPressed()
+            vm.sheetLocation = location
         } label: {
             Text("Learn More")
                 .font(.headline)
